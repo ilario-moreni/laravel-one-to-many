@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 use App\Models\Type;
+use Illuminate\Database\Eloquent\Relation\BelongsTo;
+
 
 
 class Project extends Model
 {
-    protected $fillable = ['title', 'description', 'members_num', 'budget', 'slug'];
+    protected $fillable = ['title', 'type_id', 'description', 'members_num', 'budget', 'slug'];
 
 
     use HasFactory;

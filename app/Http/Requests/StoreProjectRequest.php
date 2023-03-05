@@ -29,6 +29,7 @@ class StoreProjectRequest extends FormRequest
             'description' => ['required'],
             'members_num' => ['required'],
             'budget' => ['required'],
+            'type_id' => ['nullable', 'exists:types,id']
         ];
     }
 
