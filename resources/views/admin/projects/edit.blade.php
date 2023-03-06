@@ -19,6 +19,13 @@
             <label for="" class="form-label">Budget</label>
             <input name="budget" value="{{ old('budget') ?? $project->budget }}" id="budget" type="number"
                 class="form-control" aria-label="Amount (to the nearest dollar)" placeholder='&euro;'>
+            <label for="" class="contro-label">Type of project</label>
+            <select name="type_id" id="type_id" class="form-control">
+                @foreach ($types as $type)
+                    <option value="{{ $type->id }}"
+                        {{ $type->id == old('type_id', $project->type_id) ? 'selected' : '' }}>{{ $type->title }}</option>
+                @endforeach
+            </select>
             <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
             <textarea name="description" value="" placeholder='Description of the project' class="form-control"
                 id="description" rows="3">{{ old('description') ?? $project->description }}</textarea>
